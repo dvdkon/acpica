@@ -16,7 +16,7 @@ However, the porting has only been tested in a Linux environment.
    # source ./edksetup.sh
    # ln -s ../acpica AcpiPkg
    # AcpiPkg/generate/efi/edksetup.sh
-   # EDK_ARCH=$(uname -m | sed -e 's/x86_64/X64/' -e 's/i[3456789]86/IA32/')
+   # EDK_ARCH=$(uname -m | sed -e 's/x86_64/X64/' -e 's/i[3456789]86/IA32/' -e 's/./\U&/g')
    # build -p AcpiPkg/AcpiPkg.dsc -t GCC -a $EDK_ARCH -D DEBUG_ENABLE_OUTPUT=FALSE
 
    You can find built EFI binaries (e.x., acpidump.efi) in the following
@@ -39,3 +39,7 @@ However, the porting has only been tested in a Linux environment.
      generate/efi/bin
    It contains i386 targets if it is built on an i386 host, or it contains
    x86_64 targets if it is built on a x86_64 host.
+
+   To build utilities with gnu-efi you need up to date system utilities:
+    - gnu-efi (4.0.0+)
+    - objcopy (2.42+)
