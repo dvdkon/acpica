@@ -9,14 +9,15 @@ However, the porting has only been tested in a Linux environment.
    In a Linux environment, you can build EFI ACPICA utilities by executing
    the following commands (supposing you are using a recent GCC):
 
-   # git clone https://github.com/tianocore/edk2
    # git clone https://github.com/acpica/acpica
+   # git clone --recursive https://github.com/tianocore/edk2
    # cd edk2
    # (cd BaseTools; make)
    # source ./edksetup.sh
    # ln -s ../acpica AcpiPkg
    # AcpiPkg/generate/efi/edksetup.sh
-   # build -p AcpiPkg/AcpiPkg.dsc -t GCC
+   # EDK_ARCH=$(uname -m | sed -e 's/x86_64/X64/' -e 's/i[3456789]86/IA32/')
+   # build -p AcpiPkg/AcpiPkg.dsc -t GCC -a $EDK_ARCH -D DEBUG_ENABLE_OUTPUT=FALSE
 
    You can find built EFI binaries (e.x., acpidump.efi) in the following
    folders:
