@@ -9,7 +9,7 @@ However, the porting has only been tested in a Linux environment.
    In a Linux environment, you can build EFI ACPICA utilities by executing
    the following commands (supposing you are using a recent GCC):
 
-   # git clone https://github.com/acpica/acpica
+   # git clone https://github.com/open-acpica/acpica
    # git clone --recursive https://github.com/tianocore/edk2
    # cd edk2
    # (cd BaseTools; make)
@@ -30,7 +30,7 @@ However, the porting has only been tested in a Linux environment.
    the following commands:
 
    # apt-get install gnu-efi
-   # git clone https://github.com/acpica/acpica
+   # git clone https://github.com/open-acpica/acpica
    # cd acpica
    # make OS=efi
 

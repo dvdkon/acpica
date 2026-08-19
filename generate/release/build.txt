@@ -89,7 +89,7 @@ git and ssh stuff
 To write to the git tree, you'll need to setup an ssh connection to github.
 ssh clone path is:
 
-    git clone ssh://git@ssh.github.com/acpica/acpica.git
+    git clone ssh://git@ssh.github.com/open-acpica/acpica.git
 
 
 Build the ACPICA Software
